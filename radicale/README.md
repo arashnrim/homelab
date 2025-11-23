@@ -15,3 +15,24 @@ Radicale is a small but powerful CalDAV (calendars, to-do lists) and CardDAV (co
 # Things to note
 
 - Radicale does not offer an official Docker image, so a community-managed one (`tomsquest/docker-radicale`) is used. See more details about this image and the configuration it supports through [its GitHub page](https://github.com/tomsquest/docker-radicale).
+- More config needs to be done to implement authentication; follow the steps below.
+
+  1.  Check that `apache2-utils` is installed in your system; if not, install it:
+
+      ```sh
+      sudo apt install apache2-utils
+      ```
+
+  2.  Create a `config` folder in the radicale directory to store the configuration file:
+
+      ```sh
+      mkdir -p config
+      ```
+
+  3.  Use `htpasswd` to create a users file with a new user:
+
+      ```sh
+      htpasswd -cB config/users <username>
+      ```
+
+  4.  Ensure your `docker-compose.yml` mounts the config directory and references the users file (e.g., `./config:/etc/radicale:ro`).

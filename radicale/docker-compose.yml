@@ -1,6 +1,7 @@
 services:
   app:
     image: tomsquest/docker-radicale
+    container_name: radicale-app
     ports:
       - 5232:5232
     init: true
@@ -26,8 +27,9 @@ services:
     restart: unless-stopped
     volumes:
       - data:/data
-    env_file:
-      - stack.env
+      - /etc/radicale/config:/config:ro
+    environment:
+      - TAKE_FILE_OWNERSHIP=false
 
 volumes:
   data:
