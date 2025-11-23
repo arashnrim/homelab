@@ -1,6 +1,7 @@
 services:
   app:
-    image: etechonomy/joplin-server:latest
+    image: ghcr.io/etechonomy/joplin-server:3.3.13
+    container_name: joplin-app
     depends_on:
       - db
     ports:
@@ -11,10 +12,14 @@ services:
 
   db:
     image: postgres:16
+    container_name: joplin-db
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
+      - joplin_pg_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     restart: unless-stopped
     env_file:
       - stack.env
+
+volumes:
+  joplin_pg_data:

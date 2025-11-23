@@ -27,6 +27,13 @@ This repo contains applications separated by directories, such that the files ne
    docker compose up -d
    ```
 
+## Core philosophies
+
+These are the defining principles guiding the setup and maintenance of this home lab:
+
+- **Version pinning** — where possible, pin to a specific version tag in preference to the `latest` tag. This ensures consistency and prevents issues where newer versions may introduce breaking changes or instability.
+- **Documented in public** — any thoughts, experiences, and troubleshooting steps are documented in this repository in the form of README files or equivalent documentation.
+
 ## Contributing
 
 Since the contents of this repo is meant for use in my home lab, this repo is not accepting contributions. You're welcome to contact me through other means though if you'd like to provide an input!
