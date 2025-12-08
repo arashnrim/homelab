@@ -1,0 +1,7 @@
+services:
+  app:
+    image: bentopdf/bentopdf-simple:latest
+    container_name: bento-app
+    restart: unless-stopped
+    ports:
+      - "9007:8080"
