@@ -1,0 +1,16 @@
+services:
+  app:
+    image: searxng/searxng:latest
+    container_name: searxng-app
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    volumes:
+      - /etc/searxng:/etc/searxng
+      - data:/var/cache/searxng
+    ports:
+      - "9006:8080"
+
+volumes:
+  data:
