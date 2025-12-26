@@ -1,0 +1,19 @@
+services:
+  app:
+    image: ghcr.io/muety/wakapi:2.16.1
+    container_name: wakapi-app
+    restart: unless-stopped
+    ports:
+      - 9008:3000
+    env_file: stack.env
+
+  db:
+    image: postgres:17
+    container_name: wakapi-db
+    restart: unless-stopped
+    env_file: stack.env
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:

@@ -1,9 +1,9 @@
 services:
   app:
-    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
+    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:2.1.1
     container_name: stirling-app
     ports:
-      - '9004:8080'
+      - "9004:8080"
     volumes:
       - /etc/homelab/stirling/trainingData:/usr/share/tessdata # Required for extra OCR languages
       - /etc/homelab/stirling/extraConfigs:/configs

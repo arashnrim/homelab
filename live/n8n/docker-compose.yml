@@ -1,18 +1,16 @@
 services:
   app:
-    image: docker.n8n.io/n8nio/n8n
+    image: docker.n8n.io/n8nio/n8n:1.122.5
     container_name: n8n-app
     restart: unless-stopped
     ports:
       - "9006:5678"
-    environment:
-      - GENERIC_TIMEZONE=Asia/Singapore
-      - TZ=Asia/Singapore
     env_file:
       - stack.env
     volumes:
       - data:/home/node/.n8n
-      - ./local-files:/files
+      - files:/files
 
 volumes:
   data:
+  files:

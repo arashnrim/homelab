@@ -1,6 +1,6 @@
 services:
   app:
-    image: fireflyiii/core:latest
+    image: fireflyiii/core:version-6.4.9
     hostname: app
     container_name: firefly-app
     restart: always
@@ -13,7 +13,7 @@ services:
       - db
 
   db:
-    image: mariadb:lts
+    image: mariadb:11.8.5
     hostname: db
     container_name: firefly-db
     restart: always
@@ -22,7 +22,7 @@ services:
       - db:/var/lib/mysql
 
   importer:
-    image: fireflyiii/data-importer:latest
+    image: fireflyiii/data-importer:version-1.9.1-cli
     hostname: importer
     restart: always
     container_name: firefly-importer
@@ -33,7 +33,7 @@ services:
     env_file: stack.env
 
   cron:
-    image: alpine
+    image: alpine:3.23.2
     container_name: firefly-cron
     restart: always
     env_file: stack.env
