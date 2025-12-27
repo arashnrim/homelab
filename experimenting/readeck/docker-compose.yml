@@ -1,0 +1,39 @@
+services:
+  app:
+    image: codeberg.org/readeck/readeck:0.21.5
+    container_name: readeck
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+    ports:
+      - 9011:8000
+    env_file:
+      - stack.env
+    volumes:
+      - data:/readeck
+    restart: always
+    healthcheck:
+      test: ["CMD", "/bin/readeck", "healthcheck", "-config", "config.toml"]
+      interval: 30s
+      timeout: 2s
+      retries: 3
+
+  db:
+    image: postgres:17
+    container_name: readeck-db
+    env_file:
+      - stack.env
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "readeck", "-d", "readeck"]
+      interval: 5s
+      timeout: 60s
+      retries: 5
+      start_period: 80s
+
+volumes:
+  data:
+  pg_data:
