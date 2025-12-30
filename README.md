@@ -4,7 +4,14 @@ Welcome to the repository for my home lab! This repo will house the setup and co
 
 ## Getting started
 
-This repo contains applications separated by directories, such that the files needed to set them up and configure them are located in their own respective directories. As of now, most of the apps are containerised using Docker, and in due time Docker Compose files will be made available.
+This repo contains the following directories at the base for different reasons:
+
+| Directory | Purpose                                                                         |
+| :-------: | :------------------------------------------------------------------------------ |
+| `compose` | Storing Docker Compose files related to the services I'm currently self-hosting |
+| `scripts` | General scripts related to the home lab that I use to run on my devices         |
+
+The `compose` directory contains applications separated by directories, such that the files needed to set them up and configure them are located in their own respective directories. As of now, almost all of the apps on my server have been converted to using Docker Compose for ease.
 
 1. Clone the repository or download it as a ZIP file:
 
@@ -16,10 +23,10 @@ This repo contains applications separated by directories, such that the files ne
 2. Navigate into the directory of the services you are interested in.
 
    ```sh
-   cd joplin-server # As an example — if you'd like to set up Joplin Server
+   cd compose/production/joplin-server # As an example — if you'd like to set up Joplin Server
    ```
 
-3. Review any guidance messages, usually a README or some human-readable file, for any additional config. This may include tasks like setting up environment variables, so don't overlook this!
+3. Review any guidance messages, usually the README file, for any additional notes. This may include tasks like setting up environment variables, so don't overlook this!
 
 4. Use Docker Compose to build the app:
 
