@@ -23,16 +23,16 @@ Radicale is a small but powerful CalDAV (calendars, to-do lists) and CardDAV (co
       sudo apt install apache2-utils
       ```
 
-  2.  Create a `config` folder in the radicale directory to store the configuration file:
+  2.  Copy `config` to a preferred location store the configuration and user password files:
 
       ```sh
-      mkdir -p config
+      cp ./config <preferred_location>
       ```
 
   3.  Use `htpasswd` to create a users file with a new user:
 
       ```sh
-      htpasswd -cB config/users <username>
+      htpasswd -cB <preferred_location>/config/users <username>
       ```
 
-  4.  Ensure your `docker-compose.yml` mounts the config directory and references the users file (e.g., `./config:/etc/radicale:ro`).
+  4.  Ensure your `docker-compose.yml` mounts the config directory and references the users file (e.g., `<preferred_location>/config:/etc/radicale:ro`).

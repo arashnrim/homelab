@@ -1,0 +1,13 @@
+use_default_settings: true
+
+search:
+  default_lang: en
+  languages:
+    - en
+    - id
+  formats:
+    - json
+
+server:
+  base_url: 
+  secret_key: 
