@@ -45,6 +45,7 @@ services:
       crond -f -L /dev/stdout"
     depends_on:
       - app
+
 volumes:
   upload:
   db:

@@ -1,12 +1,14 @@
 services:
   broker:
     image: docker.io/library/redis:8
+    container_name: paperless-broker
     restart: unless-stopped
     volumes:
       - redis_data:/data
 
   db:
     image: docker.io/library/postgres:17
+    container_name: paperless-db
     restart: unless-stopped
     volumes:
       - pg_data:/var/lib/postgresql/data
@@ -17,22 +19,24 @@ services:
 
   app:
     image: ghcr.io/paperless-ngx/paperless-ngx:2.20.1
+    container_name: paperless-app
     restart: unless-stopped
     depends_on:
       - db
       - broker
     ports:
-      - "8010:8000"
+      - "9003:8000"
     volumes:
       - data:/usr/src/paperless/data
       - media:/usr/src/paperless/media
-      - ./export:/usr/src/paperless/export
-      - ./consume:/usr/src/paperless/consume
+      - ${PAPERLESS_EXPORT_DIR}:/usr/src/paperless/export
+      - ${PAPERLESS_CONSUME_DIR}:/usr/src/paperless/consume
     environment:
       PAPERLESS_REDIS: redis://broker:6379
       PAPERLESS_DBHOST: db
     env_file:
       - stack.env
+
 volumes:
   data:
   media:
