@@ -1,6 +1,6 @@
 services:
   app:
-    image: fireflyiii/core:version-6.4.9
+    image: fireflyiii/core:version-6.4.9@sha256:5252c462d3c1ed337dc87482c95bc62c25153d2a71ab87aed1c7e67e4a85d850
     hostname: app
     container_name: firefly-app
     restart: always
@@ -13,7 +13,7 @@ services:
       - db
 
   db:
-    image: mariadb:11.8.5
+    image: mariadb:11.8.5@sha256:1cac8492bd78b1ec693238dc600be173397efd7b55eabc725abc281dc855b482
     hostname: db
     container_name: firefly-db
     restart: always
@@ -33,7 +33,7 @@ services:
   #   env_file: stack.env
 
   cron:
-    image: alpine:3.23.2
+    image: alpine:3.23.2@sha256:865b95f46d98cf867a156fe4a135ad3fe50d2056aa3f25ed31662dff6da4eb62
     container_name: firefly-cron
     restart: always
     env_file: stack.env

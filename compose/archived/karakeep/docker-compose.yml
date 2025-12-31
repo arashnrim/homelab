@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/karakeep-app/karakeep:0.29.3
+    image: ghcr.io/karakeep-app/karakeep:0.29.3@sha256:bbdc3274bbe510cac32551b2a8825019f61d23c261ddb8baa9bb4311caed31c4
     container_name: karakeep-app
     restart: unless-stopped
     volumes:
@@ -11,7 +11,7 @@ services:
       - stack.env
 
   chrome:
-    image: gcr.io/zenika-hub/alpine-chrome:124
+    image: gcr.io/zenika-hub/alpine-chrome:124@sha256:1a0046448e0bb6c275c88f86e01faf0de62b02ec8572901256ada0a8c08be23f
     container_name: karakeep-chrome
     restart: unless-stopped
     command:
@@ -23,7 +23,7 @@ services:
       - --hide-scrollbars
 
   meilisearch:
-    image: getmeili/meilisearch:v1.13.3
+    image: getmeili/meilisearch:v1.13.3@sha256:bed3fb650e62da53145777204891159242f6ea4ce69e215b36223af4aa64a0ae
     container_name: karakeep-meilisearch
     restart: unless-stopped
     env_file:

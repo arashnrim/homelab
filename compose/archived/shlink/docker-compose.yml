@@ -1,6 +1,6 @@
 services:
   app:
-    image: shlinkio/shlink:stable
+    image: shlinkio/shlink:stable@sha256:e607cd6f8c7f6bfd4cc734c812538d4123602c455a439c43dd02b35af885948f
     container_name: shlink-app
     ports:
       - "9001:8080"
@@ -11,7 +11,7 @@ services:
       - db
 
   db:
-    image: postgres
+    image: postgres@sha256:bfe50b2b0ddd9b55eadedd066fe24c7c6fe06626185b73358c480ea37868024d
     container_name: shlink-db
     env_file:
       - stack.env
