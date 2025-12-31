@@ -3,6 +3,6 @@
   "extends": ["config:best-practices"],
   "labels": ["upgrade"],
   "assignees": ["arashnrim"],
-  "prFooter": "",
+  "prFooter": null,
   "prHourlyLimit": 3
 }
