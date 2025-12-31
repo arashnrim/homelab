@@ -26,6 +26,9 @@ while IFS= read -r volume; do
     fi
 done <<< "$volumes"
 
+# Dump list of volumes to a text file
+echo "$volumes" > ./volumes/volume_list.txt
+
 ###
 # Docker bind mounts
 ###
@@ -44,12 +47,33 @@ mkdir -p ./bind_mounts
 # Read and process each bind mount
 while IFS= read -r bind_mount; do
     base_name=$(basename "$bind_mount")
+    safe_name=${bind_mount#/}
+    safe_name=${safe_name//\//_}
+    temp_dir="./bind_mount_backup_$$"
 
-    if sudo tar czf "./bind_mounts/${base_name}.tar.gz" -C "$(dirname "$bind_mount")" "$base_name"; then
-        echo "[✓] Successfully backed up bind mount ${bind_mount} to ./bind_mounts/${base_name}.tar.gz."
+    # Create temporary directory and copy bind mount contents
+    if ! sudo mkdir -p "${temp_dir}" || ! sudo cp -a "${bind_mount}" "${temp_dir}/${base_name}"; then
+        echo "[✗] Failed to copy bind mount ${bind_mount}."
+        sudo rm -rf "${temp_dir}"
+        continue
+    fi
+
+    # Create original_location.txt file
+    if ! echo "${bind_mount}" | sudo tee "${temp_dir}/${base_name}/original_location.txt" > /dev/null; then
+        echo "[✗] Failed to create original_location.txt for ${bind_mount}."
+        sudo rm -rf "${temp_dir}"
+        continue
+    fi
+
+    # Archive the bind mount with metadata
+    if sudo tar czf "./bind_mounts/${safe_name}.tar.gz" -C "${temp_dir}" "${base_name}"; then
+        echo "[✓] Successfully backed up bind mount ${bind_mount} to ./bind_mounts/${safe_name}.tar.gz."
     else
         echo "[✗] Failed to backup bind mount ${bind_mount}."
     fi
+
+    # Cleanup temporary directory
+    sudo rm -rf "${temp_dir}"
 done <<< "$bind_mounts"
 
 ###
@@ -68,17 +92,54 @@ mkdir -p ./manual
 # Process each manual backup location
 for file in "${manual_backups[@]}"; do
     if [ -f "$file" ]; then
-        sudo cp "$file" "./manual/$(basename "$file").bak"
+        safe_name=${file#/}
+        safe_name=${safe_name//\//_}
+        backup_dir="./manual/${safe_name}_backup"
 
-        if [ $? -eq 0 ]; then
-            echo "[✓] Successfully backed up $file to ./manual/$(basename "$file").bak."
+        # Create directory structure
+        if ! mkdir -p "${backup_dir}"; then
+            echo "[✗] Failed to create backup directory for $file."
+            continue
+        fi
+
+        # Copy the file into the backup directory
+        if ! sudo cp -a "$file" "${backup_dir}/"; then
+            echo "[✗] Failed to copy $file."
+            rm -rf "${backup_dir}"
+            continue
+        fi
+
+        # Create original_location.txt with the original path
+        if ! echo "$file" > "${backup_dir}/original_location.txt"; then
+            echo "[✗] Failed to create original_location.txt for $file."
+            rm -rf "${backup_dir}"
+            continue
+        fi
+
+        # Archive the directory
+        if tar czf "./manual/${safe_name}.tar.gz" -C "./manual" "${safe_name}_backup"; then
+            echo "[✓] Successfully backed up $file to ./manual/${safe_name}.tar.gz."
         else
             echo "[✗] Failed to backup $file."
         fi
+
+        # Cleanup backup directory
+        rm -rf "${backup_dir}"
     else
         echo "[i] $file does not exist. Skipping."
     fi
 done
+
+###
+# Conclusion
+###
+
+mkdir -p "./$(hostname -s)_backup"
+cp -r ./volumes ./bind_mounts ./manual "./$(hostname -s)_backup/"
+
+current_date=$(date +"%Y-%m-%d_%H-%M-%S")
+tar czf "./$(hostname -s)_backup_${current_date}.tar.gz" "./$(hostname -s)_backup/"
+rm -rf "./$(hostname -s)_backup/"
 
 echo -e "\n[i] Backup process completed."
 
@@ -93,17 +154,14 @@ if [[ "$backup_to_hdd" =~ ^[Yy]$ ]]; then
         echo "[✗] BACKUP_LOCATION is not set. Aborting HDD backup."
     else
         echo "[i] Starting backup to HDD..."
-        mkdir -p "./$(hostname -s)_backup"
-        cp -r ./volumes ./bind_mounts ./manual "./$(hostname -s)_backup/"
-        tar czf "./$(hostname -s)_backup.tar.gz" "./$(hostname -s)_backup/"
-        if scp "./$(hostname -s)_backup.tar.gz" "${BACKUP_LOCATION}/"; then
+        
+        if scp "./$(hostname -s)_backup_${current_date}.tar.gz" "${BACKUP_LOCATION}/"; then
             echo "[✓] Successfully backed up to HDD."
         else
             echo "[✗] Failed to back up to HDD."
         fi
 
-        rm -rf "./$(hostname -s)_backup/"
-        rm "./$(hostname -s)_backup.tar.gz"
+        rm "./$(hostname -s)_backup_${current_date}.tar.gz"
     fi
 else
     echo "[i] Skipping backup to HDD."
