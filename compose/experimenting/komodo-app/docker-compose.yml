@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/moghtech/komodo-core:1.19.5
+    image: ghcr.io/moghtech/komodo-core:1.19.5@sha256:a1cceb4f971443b1e9f2a767788f663d0afb6244ee2135f7fe3fd1036af37ade
     container_name: komodo-app
     labels:
       komodo.skip:
@@ -20,7 +20,7 @@ services:
       - /etc/komodo/syncs:/syncs
 
   db:
-    image: mongo:8.2.3
+    image: mongo:8.2.3@sha256:7f5bbdafebde7c42e42e33396d01c0eda3eb753da8dae99071a30e350568a0a4
     container_name: komodo-db
     hostname: mongo
     expose:
@@ -39,7 +39,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${KOMODO_DB_PASSWORD}
 
   periphery:
-    image: ghcr.io/moghtech/komodo-periphery:1.19.5
+    image: ghcr.io/moghtech/komodo-periphery:1.19.5@sha256:bd79cf960ed054fe8e02384322303e462448679b1149dde48bbef151417255b1
     container_name: komodo-periphery
     labels:
       komodo.skip:

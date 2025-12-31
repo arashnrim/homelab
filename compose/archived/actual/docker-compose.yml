@@ -1,6 +1,6 @@
 services:
   app:
-    image: docker.io/actualbudget/actual-server:latest
+    image: docker.io/actualbudget/actual-server:latest@sha256:7f38b450cc3b7523dd5377792895e58b9cf333769e5a27f89e643b6f5fc60565
     container_name: actual-app
     ports:
       - "9002:5006"

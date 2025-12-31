@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/etechonomy/joplin-server:3.4.4
+    image: ghcr.io/etechonomy/joplin-server:3.4.4@sha256:a976be1f933b604508e60f74d2efa9d3a585021fbe3f32ee9d60a8fa70f4b182
     container_name: joplin-app
     depends_on:
       - db
@@ -11,7 +11,7 @@ services:
       - stack.env
 
   db:
-    image: postgres:16
+    image: postgres:16@sha256:bdbc203f612e315fdd33001f98ba0c300bb3b58a5d136fbb08dd377e8057e2b1
     container_name: joplin-db
     volumes:
       - pg_data:/var/lib/postgresql/data

@@ -1,6 +1,6 @@
 services:
   app:
-    image: docker.io/ghostfolio/ghostfolio:latest
+    image: docker.io/ghostfolio/ghostfolio:latest@sha256:c30f3e64a3d83d65bff26e9aed580916798b04a1d4983c0fd283992a222a9f90
     container_name: ghostfolio-app
     restart: unless-stopped
     init: true
@@ -24,7 +24,7 @@ services:
       retries: 5
 
   db:
-    image: docker.io/library/postgres:15-alpine
+    image: docker.io/library/postgres:15-alpine@sha256:b3968e348b48f1198cc6de6611d055dbad91cd561b7990c406c3fc28d7095b21
     container_name: ghostfolio-db
     hostname: postgres
     restart: unless-stopped
@@ -50,7 +50,7 @@ services:
       - pg_data:/var/lib/postgresql/data
 
   redis:
-    image: docker.io/library/redis:alpine
+    image: docker.io/library/redis:alpine@sha256:6cbef353e480a8a6e7f10ec545f13d7d3fa85a212cdcc5ffaf5a1c818b9d3798
     container_name: ghostfolio-redis
     restart: unless-stopped
     user: "999:1000"

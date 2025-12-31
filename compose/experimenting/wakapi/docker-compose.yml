@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/muety/wakapi:2.16.1
+    image: ghcr.io/muety/wakapi:2.16.1@sha256:d26b5d9e786dd69c0602271a8d4560142f515f8680cd38db371b41e761d2f266
     container_name: wakapi-app
     restart: unless-stopped
     ports:
@@ -8,7 +8,7 @@ services:
     env_file: stack.env
 
   db:
-    image: postgres:17
+    image: postgres:17@sha256:6a2fb9aaf22abf4c5aeeeb8fcd12dfb57b7531d8d5196f90cfe0ce3f68c4c13f
     container_name: wakapi-db
     restart: unless-stopped
     env_file: stack.env

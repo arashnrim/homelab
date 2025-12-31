@@ -17,7 +17,7 @@ x-rails-env: &rails_env
 
 services:
   app:
-    image: ghcr.io/maybe-finance/maybe:latest
+    image: ghcr.io/maybe-finance/maybe:latest@sha256:c2d398bfc334db4d9862f268401dbb46f97848eaaaad8295d1221f2d99d631cc
     volumes:
       - storage:/rails/storage
     ports:
@@ -36,7 +36,7 @@ services:
       - maybe_default
 
   worker:
-    image: ghcr.io/maybe-finance/maybe:latest
+    image: ghcr.io/maybe-finance/maybe:latest@sha256:c2d398bfc334db4d9862f268401dbb46f97848eaaaad8295d1221f2d99d631cc
     command: bundle exec sidekiq
     restart: unless-stopped
     depends_on:
@@ -50,7 +50,7 @@ services:
       - maybe_default
 
   db:
-    image: postgres:16
+    image: postgres:16@sha256:bdbc203f612e315fdd33001f98ba0c300bb3b58a5d136fbb08dd377e8057e2b1
     restart: unless-stopped
     volumes:
       - pg_data:/var/lib/postgresql/data
@@ -67,7 +67,7 @@ services:
       - maybe_default
 
   redis:
-    image: redis:latest
+    image: redis:latest@sha256:47200b04138293fae39737e50878a238b13ec0781083126b1b0c63cf5d992e8d
     restart: unless-stopped
     volumes:
       - redis_data:/data
