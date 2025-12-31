@@ -21,16 +21,16 @@ services:
     volumes:
       - db:/var/lib/mysql
 
-  importer:
-    image: fireflyiii/data-importer:version-1.9.1-cli
-    hostname: importer
-    restart: always
-    container_name: firefly-importer
-    ports:
-      - "9003:8080"
-    depends_on:
-      - app
-    env_file: stack.env
+  # importer:
+  #   image: fireflyiii/data-importer:version-1.9.1-cli
+  #   hostname: importer
+  #   restart: always
+  #   container_name: firefly-importer
+  #   ports:
+  #     - "9003:8080"
+  #   depends_on:
+  #     - app
+  #   env_file: stack.env
 
   cron:
     image: alpine:3.23.2
