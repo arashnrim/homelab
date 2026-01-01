@@ -4,5 +4,6 @@
   "labels": ["upgrade"],
   "assignees": ["arashnrim"],
   "prFooter": null,
-  "prHourlyLimit": 3
+  "prHourlyLimit": 3,
+  "ignorePaths": ["compose/archived"]
 }
