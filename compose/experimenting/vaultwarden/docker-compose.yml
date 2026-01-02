@@ -1,6 +1,6 @@
 services:
   server:
-    image: vaultwarden/server:latest
+    image: vaultwarden/server:latest@sha256:1d43c6754a030861f960fd4dab47e1b33fc19f05bd5f8f597ab7236465a6f14b
     container_name: vaultwarden-server
     restart: unless-stopped
     env_file:
