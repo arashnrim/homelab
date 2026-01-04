@@ -4,7 +4,7 @@ Ghostfolio is a self-hosted wealth management solution that helps you track, man
 
 ## Things to note
 
-- The environment variable file (`stack.env`) is incomplete; make sure to complete it (or remove any irrelevant fields) before running.
+- The environment variable file (`.env`) is incomplete; make sure to complete it (or remove any irrelevant fields) before running.
   - See [Ghostfolio's documentation](https://ghostfol.io/docs) for more information on supported environment variables and expected values.
 - This setup includes the main Ghostfolio app, a PostgreSQL database, and a Redis cache service.
 - The web interface is available at port `9004` (mapped to the app's port 3333).

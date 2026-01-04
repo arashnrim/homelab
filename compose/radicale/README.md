@@ -35,4 +35,4 @@ Radicale is a small but powerful CalDAV (calendars, to-do lists) and CardDAV (co
       htpasswd -cB <preferred_location>/config/users <username>
       ```
 
-  4.  Ensure your `docker-compose.yml` mounts the config directory and references the users file (e.g., `<preferred_location>/config:/etc/radicale:ro`).
+  4.  Ensure your `compose.yaml` mounts the config directory and references the users file (e.g., `<preferred_location>/config:/etc/radicale:ro`).

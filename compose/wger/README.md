@@ -4,7 +4,7 @@ wger is a self-hosted workout and exercise management platform. It provides tool
 
 ## Things to note
 
-- The environment variable file (`stack.env`) is incomplete; make sure to complete it (or remove any irrelevant fields) before running.
+- The environment variable file (`.env`) is incomplete; make sure to complete it (or remove any irrelevant fields) before running.
   - See [wger's documentation](https://wger.de/en/software/api) for more information on supported environment variables and expected values.
 - This setup includes the wger app with an Nginx reverse proxy, a PostgreSQL database, and a Redis cache.
 - The web interface is available at port `9012` (mapped through Nginx on port 80).

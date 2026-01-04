@@ -5,4 +5,4 @@ n8n is a free and open-source workflow automation tool that allows you to connec
 # Things to note
 
 - The environment variable files is incomplete; make sure to complete them (or remove any irrelevant fields) before running.
-  - Under `stack.env`, ensure that `WEBHOOK_URL` is the (sub)domain of the publicly-accessible n8n instance.
+  - Under `.env`, ensure that `WEBHOOK_URL` is the (sub)domain of the publicly-accessible n8n instance.

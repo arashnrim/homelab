@@ -4,7 +4,7 @@ Checkmate is a self-hosted website monitoring and uptime tracking solution. It p
 
 ## Things to note
 
-- The environment variable file (`stack.env`) is incomplete; make sure to complete it (or remove any irrelevant fields) before running.
+- The environment variable file (`.env`) is incomplete; make sure to complete it (or remove any irrelevant fields) before running.
   - See [Checkmate's documentation](https://github.com/bluewave-labs/checkmate) for more information on supported environment variables and expected values.
 - This setup includes the main Checkmate app and a MongoDB database for storing monitoring data.
 - The web interface is available at port `9009` (mapped to the app's port 52345).

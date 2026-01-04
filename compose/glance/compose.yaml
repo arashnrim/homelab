@@ -1,0 +1,9 @@
+services:
+  app:
+    image: glanceapp/glance
+    container_name: glance-app
+    restart: unless-stopped
+    volumes:
+      - /etc/glance/config:/app/config
+    ports:
+      - 9000:8080

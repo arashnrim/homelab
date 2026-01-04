@@ -5,4 +5,4 @@ Umami is a simple, fast, privacy-focused alternative to Google Analytics. It's a
 # Things to note
 
 - The environment variable files is incomplete; make sure to complete them (or remove any irrelevant fields) before running.
-  - Under `stack.env`, ensure that `APP_SECRET` is an alpahnumeric string. This is used internally by Umami.
+  - Under `.env`, ensure that `APP_SECRET` is an alpahnumeric string. This is used internally by Umami.
