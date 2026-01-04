@@ -1,6 +1,6 @@
 services:
   app:
-    image: wger/server:latest@sha256:7910b53667e0c0fa12f819197845b7569195e34c73004c27722ad7674142566f
+    image: wger/server:latest@sha256:e5ce2307673d59ebb7abd0e7723c0fcb4889c5884dcea020fa96ccd4007b4ab1
     container_name: wger-app
     depends_on:
       db:
@@ -95,7 +95,7 @@ services:
     mem_limit: 2gb
 
   celery_worker:
-    image: wger/server:latest@sha256:7910b53667e0c0fa12f819197845b7569195e34c73004c27722ad7674142566f
+    image: wger/server:latest@sha256:e5ce2307673d59ebb7abd0e7723c0fcb4889c5884dcea020fa96ccd4007b4ab1
     container_name: wger-celery_worker
     command: /start-worker
     env_file:
@@ -118,7 +118,7 @@ services:
       start_period: 30s
 
   celery_beat:
-    image: wger/server:latest@sha256:7910b53667e0c0fa12f819197845b7569195e34c73004c27722ad7674142566f
+    image: wger/server:latest@sha256:e5ce2307673d59ebb7abd0e7723c0fcb4889c5884dcea020fa96ccd4007b4ab1
     container_name: wger-celery_beat
     command: /start-beat
     logging:
