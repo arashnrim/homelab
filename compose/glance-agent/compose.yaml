@@ -1,0 +1,6 @@
+services:
+  agent:
+    image: glanceapp/agent
+    container_name: glance-agent
+    ports:
+      - 27973:27973
