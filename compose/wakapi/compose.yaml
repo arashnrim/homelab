@@ -5,13 +5,13 @@ services:
     restart: unless-stopped
     ports:
       - 9008:3000
-    env_file: stack.env
+    env_file: .env
 
   db:
     image: postgres:17@sha256:bac8128cd62a35471a1e97966861aa2ac88c8d2f408767a425ae70695a607c99
     container_name: wakapi-db
     restart: unless-stopped
-    env_file: stack.env
+    env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
 

@@ -24,7 +24,7 @@ services:
       - 9002:3000
     restart: unless-stopped
     env_file:
-      - stack.env
+      - .env
     environment:
       <<: *rails_env
     depends_on:
@@ -43,7 +43,7 @@ services:
       redis:
         condition: service_healthy
     env_file:
-      - stack.env
+      - .env
     environment:
       <<: *rails_env
     networks:
@@ -55,7 +55,7 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
     env_file:
-      - stack.env
+      - .env
     environment:
       <<: *db_env
     healthcheck:

@@ -6,7 +6,7 @@ services:
     restart: always
     ports:
       - "9009:52345"
-    env_file: stack.env
+    env_file: .env
     depends_on:
       - db
 

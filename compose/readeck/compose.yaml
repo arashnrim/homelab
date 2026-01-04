@@ -9,7 +9,7 @@ services:
     ports:
       - 9011:8000
     env_file:
-      - stack.env
+      - .env
     volumes:
       - data:/readeck
     restart: always
@@ -23,7 +23,7 @@ services:
     image: postgres:17@sha256:bac8128cd62a35471a1e97966861aa2ac88c8d2f408767a425ae70695a607c99
     container_name: readeck-db
     env_file:
-      - stack.env
+      - .env
     volumes:
       - pg_data:/var/lib/postgresql/data
     restart: unless-stopped

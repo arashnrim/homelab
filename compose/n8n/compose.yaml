@@ -6,7 +6,7 @@ services:
     ports:
       - "9001:5678"
     env_file:
-      - stack.env
+      - .env
     volumes:
       - data:/home/node/.n8n
       - files:/files
