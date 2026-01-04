@@ -13,6 +13,7 @@ services:
   db:
     image: mysql
     container_name: yourls-db
+    hostname: mysql
     restart: always
     env_file:
       - .env
