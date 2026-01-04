@@ -1,0 +1,23 @@
+services:
+  app:
+    image: yourls
+    container_name: yourls-app
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 9004:8080
+    env_file:
+      - .env
+
+  db:
+    image: mysql
+    container_name: yourls-db
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  db:
