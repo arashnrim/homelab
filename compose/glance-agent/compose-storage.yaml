@@ -1,6 +1,6 @@
 services:
   agent:
-    image: glanceapp/agent
+    image: glanceapp/agent:v0.1.0
     container_name: glance-agent
     volumes:
       - /mnt/sda:/storage:ro

@@ -1,6 +1,6 @@
 services:
   app:
-    image: yourls
+    image: yourls:1.10.2
     container_name: yourls-app
     restart: always
     depends_on:
@@ -11,7 +11,7 @@ services:
       - .env
 
   db:
-    image: mysql
+    image: mysql:9.5.0
     container_name: yourls-db
     hostname: mysql
     restart: always
