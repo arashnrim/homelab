@@ -1,0 +1,12 @@
+services:
+  app:
+    image: openwebui/open-webui:v0.6.43
+    container_name: open_webui-app
+    ports:
+      - 9000:8080
+    volumes:
+      - data:/app/data
+    restart: unless-stoppedby
+
+volumes:
+  data:
