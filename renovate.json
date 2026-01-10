@@ -5,5 +5,12 @@
   "assignees": ["arashnrim"],
   "prFooter": null,
   "prHourlyLimit": 3,
-  "ignorePaths": ["compose/archived"]
+  "ignorePaths": ["compose/archived"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pinDigest"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    }
+  ]
 }
