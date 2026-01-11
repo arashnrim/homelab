@@ -12,6 +12,7 @@ services:
       - 6767:6767
       - 8080:8080
       - 8096:8096
+      - 9696:9696
     env_file:
       - .env
 
@@ -99,3 +100,19 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/bazarr/config:/config
       - /mnt/sda/data/media/media:/data/media
+
+  prowlarr:
+    container_name: prowlarr
+    image: ghcr.io/hotio/prowlarr:release-2.3.0.5236
+    restart: unless-stopped
+    logging:
+      driver: json-file
+    network_mode: "service:gluetun"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=Asia/Singapore
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/prowlarr/config:/config
