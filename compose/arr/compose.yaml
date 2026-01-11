@@ -17,7 +17,6 @@ services:
 
   qbittorent:
     container_name: qbittorent
-    hostname: qbittorent.internal
     image: ghcr.io/hotio/qbittorrent:release-v5.1.4
     logging:
       driver: json-file
@@ -36,7 +35,6 @@ services:
 
   jellyfin:
     container_name: jellyfin
-    hostname: jellyfin.internal
     image: ghcr.io/hotio/jellyfin:release-v10.11.5
     logging:
       driver: json-file
@@ -53,7 +51,6 @@ services:
 
   radarr:
     container_name: radarr
-    hostname: radarr.internal
     image: ghcr.io/hotio/radarr:release-6.0.4.10291
     restart: unless-stopped
     logging:
@@ -71,7 +68,6 @@ services:
 
   sonarr:
     container_name: sonarr
-    hostname: sonarr.internal
     image: ghcr.io/hotio/sonarr:release-4.0.16.2944
     restart: unless-stopped
     logging:
@@ -89,7 +85,6 @@ services:
 
   bazarr:
     container_name: bazarr
-    hostname: bazarr.internal
     image: ghcr.io/hotio/bazarr:release-v1.5.4
     restart: unless-stopped
     logging:
