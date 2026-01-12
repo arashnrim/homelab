@@ -1,7 +1,7 @@
 services:
   gluetun:
     container_name: gluetun
-    image: qmcgaw/gluetun:latest
+    image: qmcgaw/gluetun:latest@sha256:7b1dafa3d25cfd891deae52c7973c499f619f7d8eac52fad84f9aa1e5e6e01ca
     cap_add:
       - NET_ADMIN
     devices:
@@ -18,7 +18,7 @@ services:
 
   qbittorent:
     container_name: qbittorent
-    image: ghcr.io/hotio/qbittorrent:release-v5.1.4
+    image: ghcr.io/hotio/qbittorrent:release-v5.1.4@sha256:95794be129a684c6ca0a3073587e716746c3bfea6cf64342a6457fd9b0c109f2
     logging:
       driver: json-file
     network_mode: "service:gluetun"
@@ -36,7 +36,7 @@ services:
 
   jellyfin:
     container_name: jellyfin
-    image: ghcr.io/hotio/jellyfin:release-v10.11.5
+    image: ghcr.io/hotio/jellyfin:release-v10.11.5@sha256:0fb224250e07712ac9bc5872784b5cc098894bc1affdaeeb5e4f79fb7a9ec238
     logging:
       driver: json-file
     network_mode: "service:gluetun"
@@ -52,7 +52,7 @@ services:
 
   radarr:
     container_name: radarr
-    image: ghcr.io/hotio/radarr:release-6.0.4.10291
+    image: ghcr.io/hotio/radarr:release-6.0.4.10291@sha256:8e2d8fda9ca74b4d1314dfd0aad8eff71501e32c1c54e22f8786a559c3315962
     restart: unless-stopped
     logging:
       driver: json-file
@@ -69,7 +69,7 @@ services:
 
   sonarr:
     container_name: sonarr
-    image: ghcr.io/hotio/sonarr:release-4.0.16.2944
+    image: ghcr.io/hotio/sonarr:release-4.0.16.2944@sha256:9c4f4341b5035ee1e1861a31fe980ff869ffffdb72deace4844c6a5268a113ac
     restart: unless-stopped
     logging:
       driver: json-file
@@ -86,7 +86,7 @@ services:
 
   bazarr:
     container_name: bazarr
-    image: ghcr.io/hotio/bazarr:release-v1.5.4
+    image: ghcr.io/hotio/bazarr:release-v1.5.4@sha256:6559fb927565dd2a374c60c15010d9a95ab9f8d744353b1117879bca4f9b8a6d
     restart: unless-stopped
     logging:
       driver: json-file
@@ -103,7 +103,7 @@ services:
 
   prowlarr:
     container_name: prowlarr
-    image: ghcr.io/hotio/prowlarr:release-2.3.0.5236
+    image: ghcr.io/hotio/prowlarr:release-2.3.0.5236@sha256:f897ca8beade49145c55d3c8ae9d2f74ae315535f18414c57c7db9c69eb5b0c4
     restart: unless-stopped
     logging:
       driver: json-file
