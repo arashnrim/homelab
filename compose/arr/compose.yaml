@@ -52,7 +52,7 @@ services:
 
   radarr:
     container_name: radarr
-    image: ghcr.io/hotio/radarr:release-6.0.4.10291@sha256:8e2d8fda9ca74b4d1314dfd0aad8eff71501e32c1c54e22f8786a559c3315962
+    image: ghcr.io/hotio/radarr:release-6.0.4.10291@sha256:b6cf4a5c2f8c27b999e8592dd3d48b1fe5cd207a43351cd39c6f5de537eff414
     restart: unless-stopped
     logging:
       driver: json-file
