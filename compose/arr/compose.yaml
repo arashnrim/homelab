@@ -103,7 +103,7 @@ services:
 
   prowlarr:
     container_name: prowlarr
-    image: ghcr.io/hotio/prowlarr:release-2.3.0.5236@sha256:f897ca8beade49145c55d3c8ae9d2f74ae315535f18414c57c7db9c69eb5b0c4
+    image: ghcr.io/hotio/prowlarr:release-2.3.0.5236@sha256:a69ea877c79be5d6f0c8de699dfc018d71461176a6f81b86773ea607983b8517
     restart: unless-stopped
     logging:
       driver: json-file
