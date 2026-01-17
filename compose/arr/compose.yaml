@@ -86,7 +86,7 @@ services:
 
   bazarr:
     container_name: bazarr
-    image: ghcr.io/hotio/bazarr:release-v1.5.4@sha256:6559fb927565dd2a374c60c15010d9a95ab9f8d744353b1117879bca4f9b8a6d
+    image: ghcr.io/hotio/bazarr:release-v1.5.4@sha256:d9515f52c19b9886df3aaed93d0b0bfd7abb5ace653bd8c8892b1014a6d288a9
     restart: unless-stopped
     logging:
       driver: json-file
