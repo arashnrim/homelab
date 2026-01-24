@@ -18,7 +18,7 @@ services:
 
   qbittorent:
     container_name: qbittorent
-    image: ghcr.io/hotio/qbittorrent:release-v5.1.4@sha256:95794be129a684c6ca0a3073587e716746c3bfea6cf64342a6457fd9b0c109f2
+    image: ghcr.io/hotio/qbittorrent:release-v5.1.4@sha256:6d0d618b047c59348d3f1b62668daed43dc714c95ba2a63045031a9c6f3ceccc
     logging:
       driver: json-file
     network_mode: "service:gluetun"
