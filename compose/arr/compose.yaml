@@ -69,7 +69,7 @@ services:
 
   sonarr:
     container_name: sonarr
-    image: ghcr.io/hotio/sonarr:release-4.0.16.2944@sha256:9c4f4341b5035ee1e1861a31fe980ff869ffffdb72deace4844c6a5268a113ac
+    image: ghcr.io/hotio/sonarr:release-4.0.16.2944@sha256:3e356fc12d0d534c7031913c707083787f39a54aacb68089039e056967670239
     restart: unless-stopped
     logging:
       driver: json-file
