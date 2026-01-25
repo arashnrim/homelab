@@ -1,6 +1,6 @@
 services:
   app:
-    image: docker.n8n.io/n8nio/n8n:2.4.3@sha256:fec47431bce7d3fd5106e82090ebaa275261886e5339ab13dd503462fdaac291
+    image: docker.n8n.io/n8nio/n8n:2.5.2@sha256:54c34f83b2294f3bef7fd684913873f575e51975e7443cf835dce5ede8a175df
     container_name: n8n-app
     restart: unless-stopped
     ports:
