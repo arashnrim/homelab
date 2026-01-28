@@ -11,7 +11,7 @@ services:
       - db
 
   db:
-    image: ghcr.io/bluewave-labs/checkmate-mongo:latest@sha256:03ca4fe2bbff1125f288e3d5e05bded17cc2f9ef0657aafd7d79282c55379b7c
+    image: ghcr.io/bluewave-labs/checkmate-mongo:latest@sha256:4546b02a1d232ae346bbc5c46659597203aa67701932aa5012d01c5cc2048435
     container_name: checkmate-db
     hostname: mongodb
     restart: always
