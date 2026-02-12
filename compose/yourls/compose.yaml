@@ -11,7 +11,7 @@ services:
       - .env
 
   db:
-    image: mysql:9.6.0@sha256:6b18d01fb632c0f568ace1cc1ebffb42d1d21bc1de86f6d3e8b7eb18278444d9
+    image: mysql:9.6.0@sha256:db32c8ec843c042a728efb0ac7aa814d6f010eaac8923e20ae0a849d09c5baf8
     container_name: yourls-db
     hostname: mysql
     restart: always
