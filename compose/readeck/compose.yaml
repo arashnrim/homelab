@@ -20,7 +20,7 @@ services:
       retries: 3
 
   db:
-    image: postgres:17@sha256:bac8128cd62a35471a1e97966861aa2ac88c8d2f408767a425ae70695a607c99
+    image: postgres:17@sha256:1eada89ec2521ae0f61125f6bdaf83bbbf88a43fecda48d112a83bb92df75c36
     container_name: readeck-db
     env_file:
       - .env
