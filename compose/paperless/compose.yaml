@@ -7,7 +7,7 @@ services:
       - redis_data:/data
 
   db:
-    image: docker.io/library/postgres:17@sha256:bac8128cd62a35471a1e97966861aa2ac88c8d2f408767a425ae70695a607c99
+    image: docker.io/library/postgres:17@sha256:f6ba4a3c3de6ae0f361a8b628d452c14295dc4d076ceb193b8c46fb0a2273e46
     container_name: paperless-db
     restart: unless-stopped
     volumes:
