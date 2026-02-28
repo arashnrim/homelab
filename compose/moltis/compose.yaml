@@ -1,0 +1,16 @@
+services:
+  app:
+    image: ghcr.io/moltis-org/moltis:0.9.9
+    container_name: moltis-app
+    restart: unless-stopped
+    ports:
+      - 13131:13131
+      - 13132:13132
+    volumes:
+      - data:/home/moltis/.moltis
+      - config:/home/moltis/.config/moltis
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  data:
+  config:
