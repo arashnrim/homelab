@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/lukegus/termix:release-1.11.1
+    image: ghcr.io/lukegus/termix:release-1.11.1@sha256:aca304385f759b3d8b302fe56f9fd5dc5cd4f9bde636d454c08f7a38375197a9
     container_name: termix-app
     restart: unless-stopped
     ports:
