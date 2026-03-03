@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/moltis-org/moltis:0.10.6@sha256:2bc044bfd3dddbcb440df12209b3824598030365ab07478ec1dc77b1d84b02c4
+    image: ghcr.io/moltis-org/moltis:0.10.11@sha256:edc1c2975965c189d4d79614d7318551319e1bfdaab830a0c8f35cf42cd22429
     container_name: moltis-app
     restart: unless-stopped
     ports:
