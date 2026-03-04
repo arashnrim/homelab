@@ -1,6 +1,6 @@
 services:
   app:
-    image: stirlingtools/stirling-pdf:2.5.3-fat@sha256:cc9b8f0fd49f663ad8cedc26884fddec2dbbb819a0e21d265efcf8d239fbb837
+    image: stirlingtools/stirling-pdf:2.6.0-fat@sha256:8e9349524f240a58556a09c3daeafd526ce8569886ceba23155967cf34107cfe
     container_name: stirling-app
     healthcheck:
       test:
