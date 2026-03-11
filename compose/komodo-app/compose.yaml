@@ -20,7 +20,7 @@ services:
       - /etc/komodo/syncs:/syncs
 
   db:
-    image: mongo:8.2.5@sha256:9e52bf8768ae4f59b9ca734845d15cee0e523ced14b900cc3692d241eec9154c
+    image: mongo:8.2.5@sha256:3a7947f3211e70c045ebff7e94293298bc3fa4e08e5cfcb8cb32ca0d06e06635
     container_name: komodo-db
     hostname: mongo
     expose:
