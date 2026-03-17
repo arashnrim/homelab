@@ -13,7 +13,7 @@ services:
       - db
 
   db:
-    image: mariadb:11.8.6@sha256:8164f184d16c30e2f159e30518113667b796306dff0fe558876ab1ff521a682f
+    image: mariadb:11.8.6@sha256:31c1aa20ba2d78c4cbc45b2675e40ffd6a3cd59897a9767ce88fc284309f55ab
     hostname: db
     container_name: firefly-db
     restart: always
