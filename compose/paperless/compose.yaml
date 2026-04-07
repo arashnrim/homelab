@@ -1,13 +1,13 @@
 services:
   broker:
-    image: docker.io/library/redis:8@sha256:009cc37796fbdbe1b631b4cc0582bed167e5e403ed8bcd06f77eb6cb5aeb6f93
+    image: docker.io/library/redis:8@sha256:970b561d234882c50495c69ffae28f94b6ad8d526f91f9b4ccdd8031466e11a2
     container_name: paperless-broker
     restart: unless-stopped
     volumes:
       - redis_data:/data
 
   db:
-    image: docker.io/library/postgres:17@sha256:b994732fcf33f73776c65d3a5bf1f80c00120ba5007e8ab90307b1a743c1fc16
+    image: docker.io/library/postgres:17@sha256:28ed727ae9f0f4e0e19e88055e1158c1ac2d5ac35d87bdbe869a9cc99bfe618c
     container_name: paperless-db
     restart: unless-stopped
     volumes:

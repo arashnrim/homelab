@@ -1,6 +1,6 @@
 services:
   app:
-    image: yourls:1.10.3@sha256:40078ccb77cb4eedc40a57a125f6518ae1d30f40cf8a939ce61a4ad25feb71e4
+    image: yourls:1.10.3@sha256:fd59e1b036dfb9de67f04377fde902f50823e1640fba4211dda486257cf80220
     container_name: yourls-app
     restart: always
     depends_on:
