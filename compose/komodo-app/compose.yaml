@@ -22,7 +22,7 @@ services:
       - keys:/config/keys
 
   db:
-    image: mongo:8.2.6@sha256:9690b268c50317b2988a7f84f514a2cdcf4de6836e12c295b48f3a203731fce1
+    image: mongo:8.3.1@sha256:ce32a4b67580c982e2020b07d4ffafdbd9ce474088434294d89c6bd9257f7788
     container_name: komodo-db
     hostname: mongo
     expose:

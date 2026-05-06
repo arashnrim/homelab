@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/etechonomy/joplin-server:3.5.2@sha256:24d94c10548814ef72258b99598b28c5a9434791243338418514a9e7a81c63c6
+    image: ghcr.io/etechonomy/joplin-server:3.6.1@sha256:d680af263ca41058a1acbdb1e9c96de3c39824a1b52c5a694b0e124fb2a24c0a
     container_name: joplin-app
     depends_on:
       - db
