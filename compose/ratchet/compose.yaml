@@ -1,0 +1,5 @@
+services:
+  app:
+    image: ghcr.io/arashnrim/ratchet:latest
+    container_name: ratchet-app
+    restart: always
