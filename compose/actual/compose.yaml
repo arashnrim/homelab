@@ -3,7 +3,7 @@ services:
     image: docker.io/actualbudget/actual-server:latest@sha256:1aeeb3985db55556e716dec25e08f6ce09308c2571b65cddbc6746ee6d5e0d45
     container_name: actual-app
     ports:
-      - "9002:5006"
+      - "9005:5006"
     volumes:
       - data:/data
     healthcheck:
