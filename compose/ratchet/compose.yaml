@@ -3,3 +3,5 @@ services:
     image: ghcr.io/arashnrim/ratchet:latest@sha256:40fc54c2cd8a5fe7a1316ef1f2bc877df73995f6a996f899e165d70dec841462
     container_name: ratchet-app
     restart: always
+    env_file:
+      - .env
