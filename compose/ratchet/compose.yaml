@@ -1,5 +1,5 @@
 services:
   app:
-    image: ghcr.io/arashnrim/ratchet:latest
+    image: ghcr.io/arashnrim/ratchet:latest@sha256:444d87aa94c0a28f60aece3ca1347ab1eeea6f9111b6ec1d6f24c6f22bf4cc00
     container_name: ratchet-app
     restart: always
