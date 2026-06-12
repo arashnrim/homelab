@@ -16,7 +16,7 @@ x-rails-env: &rails_env
 
 services:
   web:
-    image: ghcr.io/we-promise/sure:stable@sha256:67089f799ac99ca65266d7d218d2207aa19fef1fda562fc2797ef04ee858b71a
+    image: ghcr.io/we-promise/sure:stable@sha256:64fa5951bcd426863759f5f06cf0316522bc5ecb3552bb6894f4101ca8708f6f
     volumes:
       - data:/rails/storage
     ports:
@@ -36,7 +36,7 @@ services:
       - default
 
   worker:
-    image: ghcr.io/we-promise/sure:stable@sha256:67089f799ac99ca65266d7d218d2207aa19fef1fda562fc2797ef04ee858b71a
+    image: ghcr.io/we-promise/sure:stable@sha256:64fa5951bcd426863759f5f06cf0316522bc5ecb3552bb6894f4101ca8708f6f
     command: bundle exec sidekiq
     volumes:
       - data:/rails/storage
@@ -55,7 +55,7 @@ services:
       - default
 
   db:
-    image: postgres:16@sha256:4b7183ac05f8ef417db21fd72d71047a4238340c261d3cc3ddb6d579ab5071ae
+    image: postgres:16@sha256:ab47a724d0e37131ac950b98ff2beeb3fdb3bfcc592d73c6cc4b4e7626649671
     restart: unless-stopped
     volumes:
       - pg_data:/var/lib/postgresql/data
@@ -91,7 +91,7 @@ services:
       - default
 
   redis:
-    image: redis:latest@sha256:aa049e689e141a4358ad1d4562dc49c88a89fbab711fd8fcc33f684c80b26301
+    image: redis:latest@sha256:4c7ecf5d14207f5baf8e140ab428a54ae5cf2a0411956f75deb0ef89d3cb4fda
     restart: unless-stopped
     volumes:
       - redis_data:/data
