@@ -1,6 +1,6 @@
 services:
   app:
-    image: yourls:1.10.4@sha256:4aabdf1a569cd2c36ca478f6acb00e4011f9163ec996f3bc5bb7119dac48a3d7
+    image: yourls:1.10.4@sha256:67bc5e4e0cc808fd423804dc680a9ed662f679cbf08216a284a367c562791243
     container_name: yourls-app
     restart: always
     depends_on:
@@ -11,7 +11,7 @@ services:
       - .env
 
   db:
-    image: mysql:9.7.1@sha256:e370cd5f64599d46985b7729b452f2153825246f88d82753ec595c5dfc6fef6a
+    image: mysql:9.7.1@sha256:ad88e1c86cbf12ef52d0a0360cd4b774d22956c5ee9c565645fb019d7aacb6c3
     container_name: yourls-db
     hostname: mysql
     restart: always
