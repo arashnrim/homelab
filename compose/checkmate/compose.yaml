@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/bluewave-labs/checkmate-backend-mono:latest@sha256:fca87620e9c690f6d97ff6f92ab9cb1c44a69aa02edc7c8de48ecddd2748f622
+    image: ghcr.io/bluewave-labs/checkmate-backend-mono:latest@sha256:2b28595f6a4fce131fcbf3b6dc5b5a38d36f803f3183ccc4b5ae1870320c512e
     container_name: checkmate-app
     pull_policy: always
     restart: always
@@ -11,7 +11,7 @@ services:
       - db
 
   db:
-    image: ghcr.io/bluewave-labs/checkmate-mongo:latest@sha256:6f981761369184f32f007ea52ec5eab735c3494cebcb6a0b2882adaed06425b9
+    image: ghcr.io/bluewave-labs/checkmate-mongo:latest@sha256:f6947013b737a96be73d22e5cfe61f0e4fdf38cb38652bf0b116257b74efbd94
     container_name: checkmate-db
     hostname: mongodb
     restart: always
