@@ -20,7 +20,7 @@ services:
       retries: 5
 
   db:
-    image: postgres:15-alpine@sha256:cd17e2ac98240fce1541ad2a803b34009b4eea5aec8a832363cdc7eca62e722e
+    image: postgres:15-alpine@sha256:57e5b9f69e672385cdf630f42b1306b5ca934c9bf8278b5f8b1948533d75a20b
     container_name: umami-db
     environment:
       POSTGRES_DB: umami
