@@ -55,7 +55,7 @@ services:
       - default
 
   db:
-    image: postgres:16@sha256:be01cf82fc7dbba824acf0a82e150b4b360f3ff93c6631d7844af431e841a95c
+    image: postgres:16@sha256:eb4759788a2182f08257135e61a34f2cfc3c2914079f3465d64ee62350f4d081
     restart: unless-stopped
     volumes:
       - pg_data:/var/lib/postgresql/data
@@ -91,7 +91,7 @@ services:
       - default
 
   redis:
-    image: redis:latest@sha256:2838d5524559494f6f1cd66e97e76b200d64a633a8614200620755ed395daf32
+    image: redis:latest@sha256:0b13f549ab871acafaa84b673c4e29bd7dce8d12526aaafe3b4ea3366c322daf
     restart: unless-stopped
     volumes:
       - redis_data:/data
