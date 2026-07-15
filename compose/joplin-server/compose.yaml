@@ -11,7 +11,7 @@ services:
       - .env
 
   db:
-    image: postgres:16@sha256:be01cf82fc7dbba824acf0a82e150b4b360f3ff93c6631d7844af431e841a95c
+    image: postgres:16@sha256:eb4759788a2182f08257135e61a34f2cfc3c2914079f3465d64ee62350f4d081
     container_name: joplin-db
     volumes:
       - pg_data:/var/lib/postgresql/data
