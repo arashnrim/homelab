@@ -16,7 +16,7 @@ x-rails-env: &rails_env
 
 services:
   web:
-    image: ghcr.io/we-promise/sure:stable@sha256:96155b20c0b71f8e2ab960ab5aba8fba9df64c6a40ec581eca20af2b20ab089c
+    image: ghcr.io/we-promise/sure:stable@sha256:92ad2c5c3394cad25d63943a3eba63ee96de58f4086467b52381129c1a1bbc8c
     volumes:
       - data:/rails/storage
     ports:
@@ -36,7 +36,7 @@ services:
       - default
 
   worker:
-    image: ghcr.io/we-promise/sure:stable@sha256:96155b20c0b71f8e2ab960ab5aba8fba9df64c6a40ec581eca20af2b20ab089c
+    image: ghcr.io/we-promise/sure:stable@sha256:92ad2c5c3394cad25d63943a3eba63ee96de58f4086467b52381129c1a1bbc8c
     command: bundle exec sidekiq
     volumes:
       - data:/rails/storage
