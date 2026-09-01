@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/moghtech/komodo-core:2.3.2@sha256:7ae1d1547b16f1fd88902050105d80bbefc41b3023baf1f6dbc2b8df47ecb526
+    image: ghcr.io/moghtech/komodo-core:2.3.3@sha256:bca73d0eee143066228fb9b80c38a5a2726e573ad2758f7aa92b5c91a8aef1c7
     container_name: komodo-app
     labels:
       komodo.skip:
@@ -41,7 +41,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${KOMODO_DB_PASSWORD}
 
   periphery:
-    image: ghcr.io/moghtech/komodo-periphery:2.3.2@sha256:639e019751642518a0fbdc2720e5f39789e76aa495a499852b9585ffacf71149
+    image: ghcr.io/moghtech/komodo-periphery:2.3.3@sha256:fa3f1a641a265216066676950d5eecdf506955a7bafe2f01996135ae93115cd5
     container_name: komodo-periphery
     labels:
       komodo.skip:
