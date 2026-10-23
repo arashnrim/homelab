@@ -4,6 +4,7 @@ services:
     image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
     volumes:
       - ${UPLOAD_LOCATION}:/data
+      - ${EXTERNAL_LIBRARY_LOCATION}:${EXTERNAL_LIBRARY_LOCATION} # IMPORTANT: Add :ro for read-only, and remove this line if not needed
       - /etc/localtime:/etc/localtime:ro
     env_file:
       - .env
