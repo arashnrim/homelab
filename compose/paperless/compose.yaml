@@ -1,13 +1,13 @@
 services:
   broker:
-    image: docker.io/valkey/valkey:9-alpine
+    image: docker.io/valkey/valkey:9-alpine@sha256:48332870af354a799964c0012ae1194a0bf2bf894eb508f945810596dc2d8d11
     container_name: paperless-broker
     restart: unless-stopped
     volumes:
       - redis_data:/data
 
   db:
-    image: docker.io/library/postgres:18
+    image: docker.io/library/postgres:18@sha256:edb0c08dc33befd0262ab3b5cf1c4f3f8cfd8b09e88c05b45adee29d6761ddb6
     container_name: paperless-db
     restart: unless-stopped
     volumes:
@@ -18,7 +18,7 @@ services:
       POSTGRES_PASSWORD: paperless
 
   app:
-    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest@sha256:9bc6e8248891bcfa6f52fffe8b81e4ea8cae75790c3ec1b9906961a7ba55c969
     container_name: paperless-app
     restart: unless-stopped
     depends_on:
