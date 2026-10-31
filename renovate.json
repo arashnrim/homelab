@@ -6,10 +6,11 @@
   "prFooter": null,
   "prHourlyLimit": 3,
   "ignorePaths": ["compose/archived"],
+  "schedule": ["* * * * 6"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pinDigest"],
-      "matchCurrentVersion": "!/^0/",
+      "matchJsonata": ["isBreaking != true"],
       "automerge": true
     },
     {
@@ -23,6 +24,11 @@
       "groupSlug": "all-minor-patch",
       "matchPackageNames": ["*"],
       "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchCurrentValue": "/^latest$/",
+      "enabled": false
     }
   ]
 }
