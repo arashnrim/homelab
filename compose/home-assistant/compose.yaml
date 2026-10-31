@@ -1,11 +1,12 @@
 services:
   app:
     container_name: home_assistant-app
-    image: "ghcr.io/home-assistant/home-assistant:stable@sha256:9a5a3eb4a213dfb25932dee9dc6815c9305f78cecb5afa716fa2483163d8fb5b"
+    image: ghcr.io/home-assistant/home-assistant:stable
     volumes:
       - /etc/homelab/home_assistant/config:/config
-      - /etc/localtime:/etc/localtime:ro
       - /run/dbus:/run/dbus:ro
+    env_file:
+      - .env
     restart: unless-stopped
     privileged: true
     network_mode: host
