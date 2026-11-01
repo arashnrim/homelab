@@ -1,7 +1,7 @@
 services:
   app:
     container_name: immich-app
-    image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
+    image: ghcr.io/immich-app/immich-server:v3.3.5@sha256:485d546a2e31d6a8b4db8423fcba5c109de8c218d93410af115fd1ccfc4352a6
     volumes:
       - ${UPLOAD_LOCATION}:/data
       - ${EXTERNAL_LIBRARY_LOCATION}:${EXTERNAL_LIBRARY_LOCATION} # IMPORTANT: Add :ro for read-only, and remove this line if not needed
@@ -19,7 +19,7 @@ services:
 
   ml:
     container_name: immich-ml
-    image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}
+    image: ghcr.io/immich-app/immich-machine-learning:v3.3.5@sha256:5b28c9352c8374b8a1ed96fbdd8d6755fea6e43510ec43fdf6538aa02ea40f56
     volumes:
       - model-cache:/cache
     env_file:
