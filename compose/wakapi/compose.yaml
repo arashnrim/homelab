@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/muety/wakapi:2.17.5@sha256:b2ed3753af47c5adef330243c2431b04940f2560b57b9dba6029fd851a8f64a9
+    image: ghcr.io/muety/wakapi:2.18.2@sha256:7a14217db1b6a47816c8d8d0590cc40fa12fd409dfed6c194bbb4cd50f43d913
     container_name: wakapi-app
     restart: unless-stopped
     ports:
