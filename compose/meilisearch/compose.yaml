@@ -1,0 +1,13 @@
+services:
+  app:
+    image: getmeili/meilisearch:v1.56.1@sha256:b7ba431bf6f9b26cc86132798f3640964147a699cf23f026b74c6c05dbb1d60d
+    container_name: meilisearch-app
+    restart: unless-stopped
+    ports:
+      - 9014:7700
+    env_file: .env
+    volumes:
+      - data:/meili_data
+
+volumes:
+  data:
