@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/arashnrim/ratchet:0.1.0@sha256:033c691d152b28039f1b2cd03f805a7131b544f711d5922271d8557b5ebaad57
+    image: ghcr.io/arashnrim/ratchet:0.1.1@sha256:1968e42dd15bd05bcc39c485bcdf39de59adb18e529143bdbd4ed0453e0923bb
     container_name: ratchet-app
     restart: always
     env_file:
