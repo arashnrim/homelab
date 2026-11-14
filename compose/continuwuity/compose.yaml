@@ -1,10 +1,11 @@
 services:
   app:
     image: forgejo.ellis.link/continuwuation/continuwuity:v26.9.3@sha256:a177e08ab62e3d5bc60e4b8cea0a2ea9d18d4cb2bf8a6138cb0392a423c575a8
+    container_name: continuwuity-app
     restart: unless-stopped
     command: /sbin/conduwuit
     depends_on:
-      - unbound
+      - dns
     ports:
       - "9006:8008"
     volumes:
@@ -17,8 +18,9 @@ services:
     stdin_open: true
     tty: true
 
-  unbound:
+  dns:
     image: klutchell/unbound:1.26.2@sha256:50cbeb32b5838a829a7226b19cb151f9535bd7f9f3190f950780f452fe807478
+    container_name: continuwuity-dns
     restart: unless-stopped
     read_only: true
     security_opt:
