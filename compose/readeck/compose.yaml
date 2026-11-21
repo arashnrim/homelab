@@ -1,6 +1,6 @@
 services:
   app:
-    image: codeberg.org/readeck/readeck:0.23@sha256:17dea468f4f713930338062f58a3a5e0d04e37d2961ddb827792e223f3db91b4
+    image: codeberg.org/readeck/readeck:0.23@sha256:1bc8b0ad2c43fff8bababce4b586e5eaa1a0ad835abdbfadeeaef3330956d90d
     container_name: readeck-app
     depends_on:
       db:
@@ -20,7 +20,7 @@ services:
       retries: 3
 
   db:
-    image: postgres:17@sha256:b60e90042aa6b8dbecd58e224b3e36114dbf8ad754465264c2476ad58a86e45c
+    image: postgres:17@sha256:223efeb196329b55b3b9a13db144956411dbc18e727e59f681c3e0aede6475cf
     container_name: readeck-db
     env_file:
       - .env
